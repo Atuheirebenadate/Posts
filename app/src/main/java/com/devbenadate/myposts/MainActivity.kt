@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun fetchPosts() {
-        val retrofit = APICleint.buildApiClient(ApiInterface::class.java)
+        val retrofit = ApiClient.buildApiClient(ApiInterface::class.java)
         val request = retrofit.getPosts()
         request.enqueue(object : Callback<List<Post>> {
             override fun onResponse(call: Call<List<Post>>, response: Response<List<Post>>) {
